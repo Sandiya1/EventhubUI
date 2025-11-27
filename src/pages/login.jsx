@@ -2,7 +2,10 @@ import { useState } from "react";
 import api from "../services/api";
 import { Link } from "react-router-dom";
 
-function Login() {
+import bgMain from "../assets/bg-main.jpg";
+import sideBg from "../assets/b.jpg";
+
+export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -26,7 +29,7 @@ function Login() {
       } else {
         window.location.href = "/events";
       }
-    } catch (err) {
+    } catch {
       setError("Invalid credentials");
     }
   };
@@ -34,18 +37,20 @@ function Login() {
   return (
     <div className="min-h-screen w-full relative flex items-center justify-center bg-black overflow-hidden font-[Poppins]">
 
-      {/* BACKGROUND IMAGE */}
-      <div className="absolute inset-0 bg-[url('/assets/bg-main.jpg')] bg-cover bg-center opacity-30"></div>
+      {/* Background */}
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-30"
+        style={{ backgroundImage: `url(${bgMain})` }}
+      ></div>
+
       <div className="absolute inset-0 bg-gradient-to-br from-black via-black/85 to-black"></div>
 
-      {/* MAIN SPLIT CARD*/}
-      <div className="relative z-10 w-[85%] max-w-5xl h-[520px] flex rounded-3xl overflow-hidden
-                      shadow-[0_0_50px_rgba(255,255,255,0.2)] bg-white/5 backdrop-blur-xl border border-white/20">
+      {/* Main Card */}
+      <div className="relative z-10 w-[85%] max-w-5xl h-[520px] flex rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(255,255,255,0.2)] bg-white/5 backdrop-blur-xl border border-white/20">
 
-        {/* LEFT FORM */}
+        {/* Left Form */}
         <div className="w-1/2 p-10 flex flex-col justify-center">
-          <h1 className="text-4xl font-extrabold mb-6 bg-gradient-to-r from-white to-gray-300 
-                         bg-clip-text text-transparent">
+          <h1 className="text-4xl font-extrabold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
             Log In
           </h1>
 
@@ -71,17 +76,20 @@ function Login() {
               onChange={(e) => setPassword(e.target.value)}
             />
 
-            <button className="w-full py-3 rounded-xl bg-gradient-to-r from-gray-300 to-white 
-                               text-black font-semibold shadow-[0_0_25px_rgba(255,255,255,0.4)] hover:opacity-90">
+            <button className="w-full py-3 rounded-xl bg-gradient-to-r from-gray-300 to-white text-black font-semibold shadow-xl hover:opacity-90">
               Log In
             </button>
           </form>
         </div>
 
-        {/* RIGHT PANEL */}
+        {/* Right Side */}
         <div className="w-1/2 relative flex flex-col justify-center items-center text-center">
 
-          <div className="absolute inset-0 bg-[url('src/assets/b.jpg')] bg-cover bg-center opacity-40"></div>
+          <div
+            className="absolute inset-0 bg-cover bg-center opacity-40"
+            style={{ backgroundImage: `url(${sideBg})` }}
+          ></div>
+
           <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/60 to-black/80"></div>
 
           <div className="relative z-10 px-10">
@@ -93,8 +101,7 @@ function Login() {
 
             <Link
               to="/signup"
-              className="px-6 py-3 bg-white text-black font-semibold rounded-xl 
-                         hover:bg-gray-200 transition shadow-lg"
+              className="px-6 py-3 bg-white text-black font-semibold rounded-xl shadow-lg hover:bg-gray-200 transition"
             >
               Sign Up
             </Link>
@@ -102,7 +109,6 @@ function Login() {
         </div>
       </div>
 
-      {/* Global input style */}
       <style>{`
         .inputBox {
           width: 100%;
@@ -114,15 +120,9 @@ function Login() {
           outline: none;
           transition: 0.3s;
         }
-        .inputBox::placeholder {
-          color: #aaa;
-        }
-        .inputBox:focus {
-          border-color: rgba(255,255,255,0.3);
-        }
+        .inputBox::placeholder { color: #aaa; }
+        .inputBox:focus { border-color: rgba(255,255,255,0.3); }
       `}</style>
     </div>
   );
 }
-
-export default Login;

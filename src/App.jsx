@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./pages/Login.jsx";
-import Signup from "./pages/Signup.jsx";
+import Login from "./pages/login.jsx";
+import Signup from "./pages/signup.jsx";
 import Events from "./pages/Events.jsx";
 import OrganizerDashboard from "./pages/OrganizerDashboard.jsx";
 import CreateEvent from "./pages/CreateEvent.jsx";

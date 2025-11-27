@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+import login from "./pages/login";
+import signup from "./pages/signup";
 import Events from "./pages/Events"; // later
 import OrganizerDashboard from "./pages/OrganizerDashboard";
 import CreateEvent from "./pages/CreateEvent";
@@ -14,8 +14,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<login />} />
+        <Route path="/signup" element={<signup />} />
         <Route path="/events" element={<Events />} />
         <Route path="/organizer" element={<OrganizerDashboard />} />
         <Route path="/create-event" element={<CreateEvent />} />

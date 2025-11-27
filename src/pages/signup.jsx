@@ -2,7 +2,7 @@ import { useState } from "react";
 import api from "../services/api";
 import { Link } from "react-router-dom";
 
-import bgMain from "../assets/bg-main.jpg";
+
 import sideBg from "../assets/b.jpg";
 
 export default function Signup() {
@@ -31,7 +31,7 @@ export default function Signup() {
 
       <div
         className="absolute inset-0 bg-cover bg-center opacity-30"
-        style={{ backgroundImage: `url(${bgMain})` }}
+
       ></div>
 
       <div className="absolute inset-0 bg-gradient-to-br from-black via-black/85 to-black"></div>

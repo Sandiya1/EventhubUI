@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Silver color */
+:root {
+  --silver: #C0C0C0;
+}
+
+.text-silver {
+  color: var(--silver);
+}
+
+.from-silver {
+  --tw-gradient-from: #C0C0C0;
+}
+
+.border-silver {
+  border-color: #C0C0C0;
+}
+
+/* Glass Effect */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(18px);
+}
+
+/* Input box styling */
+.inputBox {
+  width: 100%;
+  padding: 12px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 10px;
+  outline: none;
+  color: white;
+}
+
+/* Cute Animations */
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-slideUp {
+  animation: slideUp 0.7s ease-out forwards;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out forwards;
+}
+/* Slide-in animation */
+@keyframes slideInSmooth {
+  0% {
+    transform: translateY(40px) scale(0.95);
+    opacity: 0;
+    filter: blur(4px);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.animate-slideIn {
+  animation: slideInSmooth 0.8s ease-out forwards;
+}
+.auth-input {
+  @apply w-full p-3 rounded-xl bg-black/40 border border-white/20
+         text-white placeholder-gray-400 focus:border-white/40 focus:outline-none;
+}
+.calendarInput::-webkit-calendar-picker-indicator {
+  filter: invert(1) brightness(1.8);
+  cursor: pointer;
+}
